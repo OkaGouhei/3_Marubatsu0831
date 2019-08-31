@@ -29,11 +29,11 @@ public class Marubatsu{
 				horizontal--;
 			}
 			place[vertical][horizontal] = mark ;
-    	for(int i=0;i<3;i++){
-	    	for(int j=0;j<3;j++){
-		    	System.out.print("|"+ place[i][j]);
-	    	}
-		    System.out.println("|");
+			for(int i=0;i<3;i++){
+				for(int j=0;j<3;j++){
+				System.out.print("|"+ place[i][j]);
+				}
+				System.out.println("|");
 			}
 			roop_number++;
 			for(int i=0;i<3;i++){
