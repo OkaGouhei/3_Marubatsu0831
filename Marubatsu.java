@@ -35,19 +35,6 @@ public class Marubatsu{
 			}
 			loop_number++;
 
-			boolean aiko_hantei = false;
-			for(int i=0;i<3;i++){
-				for(int j=0;j<3;j++){
-					if(place[i][j] == " "){
-						aiko_hantei = true;
-					}
-				}
-			}
-			if(aiko_hantei == false){
-				System.out.println("あいこです") ;
-				break ;
-			}
-
 			for(int i=0;i<3;i++){
 				if(place[i][0]==  mark &&place[i][1] == mark &&place[i][2] == mark ){
 					System.out.println(mark+ "の勝ちです") ;
@@ -64,6 +51,19 @@ public class Marubatsu{
 			}
 			if(place[0][2]== mark &&place[1][1] == mark &&place[2][0] == mark ){
 				System.out.println(mark + "の勝ちです") ;
+				break ;
+			}
+
+			boolean aiko_hantei = false;
+			for(int i=0;i<3;i++){
+				for(int j=0;j<3;j++){
+					if(place[i][j] == " "){
+						aiko_hantei = true;
+					}
+				}
+			}
+			if(aiko_hantei == false){
+				System.out.println("あいこです") ;
 				break ;
 			}
 
