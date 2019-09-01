@@ -54,15 +54,15 @@ public class Marubatsu{
 				break ;
 			}
 
-			boolean aiko_hantei = false;
+			boolean aiko_hantei = true;
 			for(int i=0;i<3;i++){
 				for(int j=0;j<3;j++){
 					if(place[i][j] == " "){
-						aiko_hantei = true;
+						aiko_hantei = false;
 					}
 				}
 			}
-			if(aiko_hantei == false){
+			if(aiko_hantei){
 				System.out.println("あいこです") ;
 				break ;
 			}
