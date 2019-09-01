@@ -8,10 +8,10 @@ public class Marubatsu{
 				place[i][j] =" ";
 			}
 		}
-		int roop_number = 0;
+		int loop_number = 0;
 		String mark ="";
 		loop:do{
-			if(roop_number%2 == 0){
+			if(loop_number%2 == 0){
 				mark ="@";
 			}else{
 				mark ="*";
@@ -23,10 +23,8 @@ public class Marubatsu{
 			horizontal--;
 			while ( vertical<0 || vertical >2 || horizontal<0 || horizontal > 2 || place[vertical][horizontal] != " " ){
 				System.out.println("もう一度おいてください ") ;
-				vertical = scan.nextInt();
-				vertical--;
-				horizontal = scan.nextInt();
-				horizontal--;
+				vertical = scan.nextInt() - 1;
+				horizontal = scan.nextInt()-1;
 			}
 			place[vertical][horizontal] = mark ;
 			for(int i=0;i<3;i++){
@@ -35,7 +33,21 @@ public class Marubatsu{
 				}
 				System.out.println("|");
 			}
-			roop_number++;
+			loop_number++;
+
+			boolean aiko_hantei = false;
+			for(int i=0;i<3;i++){
+				for(int j=0;j<3;j++){
+					if(place[i][j] == " "){
+						aiko_hantei = true;
+					}
+				}
+			}
+			if(aiko_hantei == false){
+				System.out.println("あいこです") ;
+				break ;
+			}
+
 			for(int i=0;i<3;i++){
 				if(place[i][0]==  mark &&place[i][1] == mark &&place[i][2] == mark ){
 					System.out.println(mark+ "の勝ちです") ;
@@ -54,15 +66,7 @@ public class Marubatsu{
 				System.out.println(mark + "の勝ちです") ;
 				break ;
 			}
-			for(int i=0;i<3;i++){
-				for(int j=0;j<3;j++){
-					if(place[i][j] == " "){
-						continue loop;
-					}
-				}
-			}
-			System.out.println("あいこです") ;
-			break ;
+
 		}while(true);
 	}
 }
